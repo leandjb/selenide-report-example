@@ -2,7 +2,6 @@ import com.codeborne.selenide.testng.TextReport;
 import com.codeborne.selenide.testng.annotations.Report;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -12,12 +11,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 @Listeners({TextReport.class})
 @Report
-public class GoogleTestTestNG {
+public class SearchTestNG_Test {
 
     @BeforeTest
     public void  setUp(){
         WebDriverManager.edgedriver().setup();
-
     }
 
     @Test

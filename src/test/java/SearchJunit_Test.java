@@ -1,4 +1,5 @@
 import com.codeborne.selenide.junit5.TextReportExtension;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,15 +10,24 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 @ExtendWith({TextReportExtension.class})
-public class GoogleTestJunit {
+public class SearchJunit_Test {
 
     @BeforeAll
     public static void setUp(){
-        open("https://google.com");
+        WebDriverManager.edgedriver().setup();
     }
 
     @Test
-    public void userCanSearchOnGooglePage(){
+    public void userCanSearchOnGooglePage() {
+        open("https://google.com");
+
+        $(By.name("q")).setValue("DJI M30").pressEnter();
+        $("#gbwa > div > a").shouldBe(visible);
+    }
+
+    @Test
+    public void userCanSearchOnBingPage() {
+        open("https://bing.com");
 
         $(By.name("q")).setValue("DJI M30").pressEnter();
         $("#gbwa > div > a").shouldBe(visible);

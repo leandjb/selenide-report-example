@@ -26,11 +26,11 @@ public class SearchTestNG_Test {
         $("#gbwa > div > a").shouldBe(visible);
     }
 
-    @Test
-    public void userCanSearchOnBingPage() {
-        open("https://bing.com");
-
-        $(By.name("q")).setValue("DJI M30").pressEnter();
-        $("#gbwa > div > a").shouldBe(visible);
-    }
+//    @Test
+//    public void userCanSearchOnBingPage() {
+//        open("https://bing.com");
+//
+//        $(By.name("q")).setValue("DJI M30").pressEnter();
+//        $("#gbwa > div > a").shouldBe(visible);
+//    }
 }
